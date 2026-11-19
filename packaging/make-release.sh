@@ -45,7 +45,10 @@ cp -a packaging/kwin packaging/gnome "$STAGE/packaging/"
 cp -a docs/screenshots "$STAGE/docs/"
 
 tar -C "$STAGE_ROOT" -czf "$ARCHIVE" "$NAME"
-sha256sum "$ARCHIVE" > "$ARCHIVE.sha256"
+(
+    cd "$STAGE_ROOT"
+    sha256sum "$NAME.tar.gz" > "$NAME.tar.gz.sha256"
+)
 
 echo "Created:"
 ls -lh "$ARCHIVE" "$ARCHIVE.sha256"

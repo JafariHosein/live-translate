@@ -1,0 +1,7 @@
+{
+    "uuid": "live-translate@local",
+    "name": "Live Translate Always On Top",
+    "description": "Keeps the Live Translate overlay above other windows and visible on every workspace.",
+    "shell-version": ["45", "46", "47", "48", "49", "50"],
+    "version": 1
+}

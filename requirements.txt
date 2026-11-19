@@ -1,0 +1,22 @@
+# Live Translate — exact runtime dependencies.
+# Python 3.10+ is required (tested on 3.14, Arch Linux).
+#
+# Install inside a virtual environment:
+#   python -m venv .venv
+#   .venv/bin/pip install -r requirements.txt
+
+PyQt6==6.12.1
+PyQt6-Qt6==6.12.0
+PyQt6-sip==13.13.1
+
+sounddevice==0.5.6
+numpy==2.5.5
+
+evdev==2.0.0
+
+SpeechRecognition==3.17.0
+deep-translator==1.11.4
+requests==2.34.2
+
+groq==1.7.0
+python-dotenv==1.2.4

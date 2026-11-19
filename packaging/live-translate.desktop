@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Live Translate
+GenericName=English → Persian Voice Translator
+Comment=Push-to-talk English-to-Persian translation overlay
+Exec=live-translate
+TryExec=live-translate
+Icon=live-translate
+Terminal=false
+Categories=AudioVideo;Audio;
+Keywords=translate;translation;persian;farsi;voice;speech;overlay;subtitle;
+StartupNotify=false
+StartupWMClass=live-translate

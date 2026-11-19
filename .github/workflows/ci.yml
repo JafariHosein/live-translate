@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    name: Python and shell syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile Python sources
+        run: python -m compileall -q -x '(^|/)(\.venv|build|dist)/' .
+
+      - name: Check shell scripts
+        run: |
+          bash -n run.sh
+          bash -n build.sh
+          bash -n packaging/install-release.sh
+          bash -n packaging/make-release.sh
+
+      - name: Validate JSON metadata
+        run: |
+          python -m json.tool packaging/kwin/live-translate-ontop/metadata.json >/dev/null
+          python -m json.tool packaging/gnome/live-translate@local/metadata.json >/dev/null

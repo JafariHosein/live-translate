@@ -1,0 +1,19 @@
+{
+    "KPackageStructure": "KWin/Script",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Live Translate"
+            }
+        ],
+        "Description": "Keeps the Live Translate overlay above other windows and shows it on every virtual desktop.",
+        "EnabledByDefault": false,
+        "Icon": "preferences-system-windows",
+        "Id": "live-translate-ontop",
+        "License": "MIT",
+        "Name": "Live Translate Always On Top",
+        "Version": "1.0"
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js"
+}

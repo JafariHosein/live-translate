@@ -2,7 +2,14 @@
 # Launch Live Translate from its project virtual environment.
 set -euo pipefail
 
-HERE="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+# Resolve a symlink such as ~/.local/bin/live-translate -> <project>/run.sh.
+SOURCE="${BASH_SOURCE[0]}"
+while [[ -L "$SOURCE" ]]; do
+    SOURCE_DIR="$(cd -P -- "$(dirname -- "$SOURCE")" && pwd)"
+    SOURCE="$(readlink -- "$SOURCE")"
+    [[ "$SOURCE" != /* ]] && SOURCE="$SOURCE_DIR/$SOURCE"
+done
+HERE="$(cd -P -- "$(dirname -- "$SOURCE")" && pwd)"
 cd "$HERE"
 
 if [[ ! -x .venv/bin/python ]]; then
